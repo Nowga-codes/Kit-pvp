@@ -1,0 +1,37 @@
+name: SERVERR
+version: 1.0 BETA
+main: nowga.plugin.kitpvp.Main
+author: Nowga 
+commands:
+  build:
+  tag:
+  tags:
+  register:
+  login:
+  warp:
+  setwarp:
+  warps:
+  delwarp:
+  spawn:
+  speed:
+  ban:
+  banip:
+  ip:
+  unban:
+  unbanip:
+  mute:
+  unmute:
+  vipset:
+  setfeast:
+  admin:
+  fly:
+  yt:
+  youtuber:
+  score:
+  ranks:
+  setrank:
+  report:
+  aplicar:
+  cc:
+  trocarsenha:
+  ping:
