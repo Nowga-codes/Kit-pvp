@@ -15,21 +15,16 @@ public class Connect {
 	public static PreparedStatement stm;
 	
 	public static void open() {
-		
-		url = "jdbc:mysql://dl12a.virtushost.net/host_3437";
-		user = "host_3437";
-		password = "9a41ec30dd";
 	
-		
 		//Usar quando for testar pls no localhost
-		urlLocal = "jdbc:mysql://localhost:3306/thundermc";
-		userLocal = "root";
-		passwordLocal = "";
+		url = "jdbc:mysql://localhost:3306/thundermc";
+		user = "root";
+		password = "";
 		
 		try {
 			connection = DriverManager.getConnection(url, user, password);
 	
-			Bukkit.getConsoleSender().sendMessage("§cABRIU");
+			Bukkit.getConsoleSender().sendMessage("Â§cABRIU");
 			createTable();
 			createTableLogin();
 			createTableKits();
@@ -39,70 +34,70 @@ public class Connect {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			Bukkit.getConsoleSender().sendMessage("§cNAO ABRIU");
+			Bukkit.getConsoleSender().sendMessage("Â§cNAO ABRIU");
 		}
 		
 	}
 	
 	public static void createTable() {
 		if(connection == null) {
-			Bukkit.getConsoleSender().sendMessage("§cNAO ABRIU TABLE");
+			Bukkit.getConsoleSender().sendMessage("Â§cNAO ABRIU TABLE");
 			return;
 		}
 			try {
 				stm= connection.prepareStatement("CREATE TABLE IF NOT EXISTS `jogadores`(`player` VARCHAR(25), `kills` INT NOT NULL, `deaths` INT NOT NULL, `coins` INT NOT NULL, `xp` INT NOT NULL, `ip` VARCHAR(25), `wins` INT NOT NULL, `loses` INT NOT NULL)");
 				stm.executeUpdate();
-				Bukkit.getConsoleSender().sendMessage("§a A tabela Jogadores foi carregada com sucesso!");
+				Bukkit.getConsoleSender().sendMessage("Â§a A tabela Jogadores foi carregada com sucesso!");
 			} catch (SQLException e) {
 				e.printStackTrace();
-				Bukkit.getConsoleSender().sendMessage("§7 Não foi possível criar a tabela!");
+				Bukkit.getConsoleSender().sendMessage("Â§7 NÃ£o foi possÃ­vel criar a tabela!");
 			}
 		
 	}
 	public static void createTableLogin() {
 		if(connection == null) {
-			Bukkit.getConsoleSender().sendMessage("§cNAO ABRIU TABLE");
+			Bukkit.getConsoleSender().sendMessage("Â§cNAO ABRIU TABLE");
 			return;
 		}
 			try {
 				stm= connection.prepareStatement("CREATE TABLE IF NOT EXISTS `login`(`player` VARCHAR(25), `senha` VARCHAR(25))");
 				stm.executeUpdate();
-				Bukkit.getConsoleSender().sendMessage("§a A tabela Login foi carregada com sucesso!");
+				Bukkit.getConsoleSender().sendMessage("Â§a A tabela Login foi carregada com sucesso!");
 			} catch (SQLException e) {
 				e.printStackTrace();
-				Bukkit.getConsoleSender().sendMessage("§7 Não foi possível criar a tabela!");
+				Bukkit.getConsoleSender().sendMessage("Â§7 NÃ£o foi possÃ­vel criar a tabela!");
 			}
 		
 	}
 	public static void createTableKits() {
 		if(connection == null) {
-			Bukkit.getConsoleSender().sendMessage("§cNAO ABRIU TABLE");
+			Bukkit.getConsoleSender().sendMessage("Â§cNAO ABRIU TABLE");
 			return;
 		}
 			try {
 				stm= connection.prepareStatement("CREATE TABLE IF NOT EXISTS `kits`(`player` VARCHAR(25), `Stomper` BOOLEAN, `AntiStomper` BOOLEAN, `Anchor` BOOLEAN"
 						+ ", `Fisherman` BOOLEAN, `Grappler` BOOLEAN, `Poseidon` BOOLEAN, `Urgal` BOOLEAN, `QuickDropper` BOOLEAN, `Magma` BOOLEAN)");
 				stm.executeUpdate();
-				Bukkit.getConsoleSender().sendMessage("§a A tabela Kits foi carregada com sucesso!");
+				Bukkit.getConsoleSender().sendMessage("Â§a A tabela Kits foi carregada com sucesso!");
 			} catch (SQLException e) {
 				e.printStackTrace();
-				Bukkit.getConsoleSender().sendMessage("§7 Não foi possível criar a tabela!");
+				Bukkit.getConsoleSender().sendMessage("Â§7 NÃ£o foi possÃ­vel criar a tabela!");
 			}
 		
 	}
 	public static void createTableWarps() {
 		if(connection == null) {
-			Bukkit.getConsoleSender().sendMessage("§cNAO ABRIU TABLE");
+			Bukkit.getConsoleSender().sendMessage("Â§cNAO ABRIU TABLE");
 			return;
 		}
 
 			try {
 				stm= connection.prepareStatement("CREATE TABLE IF NOT EXISTS `warps`(`warp` VARCHAR(25), `x` DOUBLE, `y` DOUBLE, `z` DOUBLE, `yaw` FLOAT, `pitch` FLOAT)");
 				stm.executeUpdate();
-				Bukkit.getConsoleSender().sendMessage("§a A tabela Warps foi carregada com sucesso!");
+				Bukkit.getConsoleSender().sendMessage("Â§a A tabela Warps foi carregada com sucesso!");
 			} catch (SQLException e) {
 				e.printStackTrace();
-				Bukkit.getConsoleSender().sendMessage("§7 Não foi possível criar a tabela!");
+				Bukkit.getConsoleSender().sendMessage("Â§7 NÃ£o foi possÃ­vel criar a tabela!");
 			}
 		
 	}
